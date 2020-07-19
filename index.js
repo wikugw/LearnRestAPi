@@ -6,7 +6,7 @@ const booksRoute    =  require("./routes/books");
 const router        = require("./routes/books");
 require("dotenv").config();
 
-const PORT = process.env.port || 3000
+// const PORT = process.env.port || 3000
 
 // middlewares
 app.use(express.json());
@@ -44,6 +44,6 @@ mongoose.connect(
 });
 
 // start server
-app.listen(PORT,() => {
+app.listen(process.env.PORT || 3000,() => {
     logger.info("Server started");
 });
