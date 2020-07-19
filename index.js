@@ -38,12 +38,12 @@ mongoose.connect(
     process.env.MONGO_URL,
     {useNewUrlParser:true}
 ).then(() => {
-    logger.log("info","connected to mongodb atlas")
+    logger.info("connected to mongodb atlas")
 }).catch(error => {
-    logger.log("error", error.message)
+    logger.error(error.message)
 });
 
 // start server
 app.listen(PORT,() => {
-    logger.info(`Server started at PORT ${PORT}`);
+    logger.info("Server started");
 });
